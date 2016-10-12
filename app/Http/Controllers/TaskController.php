@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Task;
@@ -11,8 +12,10 @@ class TaskController extends Controller
 {
     //
     public function index() {
+    	$tasks =  DB::table('tasks')->paginate(2);
+    	// $tasks = Task::all();
 	    return view('task', [
-	        'tasks' => Task::all()
+	        'tasks' => $tasks
 	    ]);
 	}
 
