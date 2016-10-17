@@ -66,3 +66,13 @@ Route::any('captcha-test', function()
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+// 后台登陆
+Route::group(['prefix' => 'backend','namespace' => 'Backend'],function ($router)
+{
+    Route::get('/', function () {
+        return view('backend.index');
+    });
+});
+
