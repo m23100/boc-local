@@ -45,6 +45,10 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+        // factory('App\Models\Admin',3)->create([
+        //     'password' => bcrypt('123456'),
+        //     // 'name'=>'m23100'
+        // ]);
         return view('admin.login.index');
     }
     /**

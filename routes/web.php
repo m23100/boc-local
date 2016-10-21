@@ -63,7 +63,6 @@ Route::any('captcha-test', function()
     $form .= '</form>';
     return $form;
 });
-Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
@@ -76,3 +75,5 @@ Route::group(['prefix' => 'backend','namespace' => 'Backend'],function ($router)
     });
 });
 
+
+Route::resource('/category', 'CateController');

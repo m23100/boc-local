@@ -50,6 +50,7 @@ class TaskController extends Controller
 	    $task = Task::find($id);
 	    $task->name = $request->get('name');
 	    $task->content = $request->get('content');
+	    // print_r($task);
 	    $task->save();
 	    return response()->json($task);
 	}
